@@ -13,7 +13,7 @@ async function listContacts() {
 async function getContactById(contactId) {
     try {
         const list = await listContacts();
-        return list.filter((item) => item.id === contactId);
+        return list.find((item) => item.id === contactId);
     } catch (error) {
         console.log(error);
     }
@@ -30,14 +30,6 @@ async function removeContact(contactId) {
 }
 
 async function addContact(name, email, phone) {
-    // const id = JSON.parse(JSON.stringify(Date.now()).slice(9, 11));
-    // try {
-    //     const list = await listContacts();
-    //     await fsPromises.writeFile(contactsPath, JSON.stringify([...list, { id, name, email, phone }]));
-
-    // } catch (error) {
-    //     log(error);
-    // }
     try {
         const list = await listContacts()
         const newUser = { id: nanoid(), ...body }
