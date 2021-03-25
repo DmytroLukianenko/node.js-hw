@@ -1,0 +1,30 @@
+{
+  "name": "node.js-hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "nanoid": "^3.1.22",
+    "node": "^15.10.0",
+    "yargs": "^16.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmytroLukianenko/node.js-hw.git"
+  },
+  "author": "Dmytro Lukianenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmytroLukianenko/node.js-hw/issues"
+  },
+  "homepage": "https://github.com/DmytroLukianenko/node.js-hw#readme",
+  "keywords": []
+}
