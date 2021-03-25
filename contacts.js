@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-
+const { nanoid } = require('nanoid');
 const { promises: fsPromises } = fs;
 
 const contactsPath = path.join(__dirname, "./db/contacts.json");
@@ -22,7 +22,7 @@ async function getContactById(contactId) {
 async function removeContact(contactId) {
     try {
         const list = await listContacts();
-        const result = list.filter((ite,) => item.id !== contactId);
+        const result = list.filter((item) => item.id !== contactId);
         await fsPromises.writeFile(contactsPath, JSON.stringify(result));
     } catch (error) {
         console.log(error);
@@ -30,13 +30,20 @@ async function removeContact(contactId) {
 }
 
 async function addContact(name, email, phone) {
-    const id = JSON.parse(JSON.stringify(Date.now()).slice(9, 11));
-    try {
-        const list = await listContacts();
-        await fsPromises.writeFile(contactsPath, JSON.stringify([...list, { id, name, email, phone }]));
+    // const id = JSON.parse(JSON.stringify(Date.now()).slice(9, 11));
+    // try {
+    //     const list = await listContacts();
+    //     await fsPromises.writeFile(contactsPath, JSON.stringify([...list, { id, name, email, phone }]));
 
+    // } catch (error) {
+    //     log(error);
+    // }
+    try {
+        const list = await listContacts()
+        const newUser = { id: nanoid(), ...body }
+        await fsPromises.writeFile(contacts, JSON.stringify([...list, ...newUser]))
     } catch (error) {
-        log(error);
+        console.log(error)
     }
 
 }

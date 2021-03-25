@@ -2,7 +2,7 @@ console.log('Hello, world!')
 const contacts = require('./contacts.js');
 const argv = require('yargs').argv;
 
-async function invokeAction({ action, id, name, email, phone }) {
+async function invokeAction({ body, action, id, name, email, phone }) {
     switch (action) {
         case 'list':
             console.table(await contacts.listContacts());
